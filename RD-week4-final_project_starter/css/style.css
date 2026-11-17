@@ -35,9 +35,6 @@ img {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* =========================================
-   5. Mobile-First Base Styles (1-Column Grid)
-   ========================================= */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -59,9 +56,6 @@ figure img {
   display: block;
 }
 
-/* =========================================
-   6. Tablet View (Triggers at 772px)
-   ========================================= */
 @media screen and (min-width: 772px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -77,9 +71,6 @@ figure img {
   }
 }
 
-/* =========================================
-   7. Large Screen View (Triggers at 992px)
-   ========================================= */
 @media screen and (min-width: 992px) {
   figure {
     border-radius: 0;
@@ -90,18 +81,12 @@ figure img {
   }
 }
 
-/* =========================================
-   8. Reduced Motion Media Query
-   ========================================= */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 }
 
-/* =========================================
-   9. Dark Color Scheme Media Query
-   ========================================= */
 @media (prefers-color-scheme: dark) {
   figure {
     background-color: #222222;
