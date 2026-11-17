@@ -1,143 +1,111 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color: #dedede;
+  background-color: #dedede;
+  padding: 5px;
+  margin: 15px;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-    text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.95em;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
+h2 {
+  text-align: center;
 }
 
-p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+li {
+  margin-top: 20px;
 }
 
-img{
-  width:100%;
+img {
+  border: 5px solid blue;
+  border-radius: 35px;
+  width: 100%;
 }
-
-
-p{
-  text-align:center;
-}
-
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
-}
-
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-main {
-    border: 5px #000 solid;
-    margin: 10px;
-}
- */
-/* 
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
- */
-/* img{
-    width: 200px;
-    height: 200px;
-    padding: 5px;
-} */
-
-/* .child {
-    position: relative;
-    display: inline-block;
-    border: 5px black solid;
-    margin: 5px;
-    border-radius: 5px;
-} */
-
-/* 
 
 .label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.button {
-    display: inline-block;
-    border: 2px solid #000;
-    padding: 5px;
-    border-radius: 25px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
- */
-/* 
-.button:hover {
-    background-color:#fff;
-} */
 
-/* 
-footer {
-    display: flex;
-    justify-content: center;
-} */
+/* =========================================
+   5. Mobile-First Base Styles (1-Column Grid)
+   ========================================= */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
 
-/* 
-header {
-    border-radius: 5px;
-    border: 5px #000 solid;
-    margin: 10px;
-} */
+figure {
+  margin: 0;
+  padding: 10px;
+  border: 2px solid #333;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
 
-/* 
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.child:hover .label {
-    display: block;
-} */
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   6. Tablet View (Triggers at 772px)
+   ========================================= */
+@media screen and (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  figure:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   7. Large Screen View (Triggers at 992px)
+   ========================================= */
+@media screen and (min-width: 992px) {
+  figure {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   8. Reduced Motion Media Query
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================
+   9. Dark Color Scheme Media Query
+   ========================================= */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #222222;
+    color: #f5e663;
+    border-color: #000000;
+  }
+}
